@@ -5,8 +5,9 @@
 
 # Set to default path if applet path is not defined
 [ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/applets/
-options=`ls -d $ROFI_APPLETS_PATH/*/ | sed "s#$ROFI_APPLETS_PATH##g" | tr "/" " "`
-[ "$options" = "" ] && echo "error: No applet were found at $ROFI_APPLETS_PATH directory.\nEither move applets to the $ROFI_APPLETS_PATH or define \$ROFI_APPLETS_PATH at .bashrc" 1>&2
+options=`ls -d ${ROFI_APPLETS_PATH}/applets/*/ | sed "s#${ROFI_APPLETS_PATH}/applets##g" | tr "/" " "`
+[ "$options" = "" ] && echo -e "error: No applet were found at $ROFI_APPLETS_PATH directory.
+Either move applets to the $ROFI_APPLETS_PATH or define \$ROFI_APPLETS_PATH at .bashrc" 1>&2
  
 
 Help()
@@ -22,14 +23,16 @@ Help()
    echo "│ -h/--help          Prints this menu.       │"
    echo "│ -r/--run \$app      Runs selected applet    │"
    echo "└────────────────────────────────────────────┘"
-   echo " Applets:"
-   [ "$options" = "" ] && echo "error: No applet were found at $ROFI_APPLETS_PATH directory.\nEither move applets to the $ROFI_APPLETS_PATH or define \$ROFI_APPLETS_PATH at .bashrc" 1>&2 || " `echo $options`"
-   echo
+   echo " Available Applets:"
+   [ "$options" = "" ] && echo -e " error: No applet were found at $ROFI_APPLETS_PATH directory.
+Either move applets to the $ROFI_APPLETS_PATH or define \$ROFI_APPLETS_PATH at .bashrc" 1>&2 \
+|| echo "- `echo $options | sed 's/ /\n- /g'`"
+echo
 }
 
 Run()
 {
-    sh $ROFI_APPLETS_PATH/$app/launch.sh 2>/dev/null
+    sh ${ROFI_APPLETS_PATH}/applets/$app/launch.sh 2>/dev/null
 }
 
 if [[ "$#" -eq 0 ]]; then
