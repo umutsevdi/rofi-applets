@@ -20,7 +20,7 @@
 
 Rofi is an amazing tool to create pop-ups and small applications. Here I built a CLI and
 bunch of useful applets.
-<img src="screenshots/launcher.png">
+<img src="screenshots/preview.GIF">
 
 </section>
 
@@ -119,6 +119,7 @@ You can customize or build new applets easily.
   consistency. Develop rest like any other rofi applet. Write your launch script
   to the `launch.sh`. Applet CLI will automatically recognize your applet on the
   next run.
+  <img src="screenshots/launcher.png">
 
 </section>
 <section id="license">
