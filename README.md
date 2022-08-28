@@ -25,6 +25,7 @@ bunch of useful applets.
 </section>
 
 <section id="installation">
+
 ## 2- Installation
 
 This project requires [Rofi](https://github.com/davatorium/rofi). It's a very powerful
