@@ -26,7 +26,7 @@
   bg-warn:            #F38BA8e6;
   bg-darkish:         #1E1E2E80;
   nerdfont:           "JetBrains Mono Nerd Font 10";
-  nerdfont-big:       "JetBrains Mono Nerd Font 19";
+  nerdfont-big:       "JetBrains Mono Nerd Font 20";
   text:               "Roboto Regular 10";
 
   round:              8px;

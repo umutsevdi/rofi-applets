@@ -92,8 +92,7 @@ element-text {
 	font:							@nerdfont-big;
     expand:                         true;
     horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         25px 25px 25px 25px;
+    margin:                         16px 12px 16px 12px;
 }
 
 element normal.urgent,
@@ -121,5 +120,3 @@ element selected.active {
     background-color:               @bg-selected;
     color:                          @fg;
 }
-
-

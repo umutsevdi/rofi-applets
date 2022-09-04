@@ -29,18 +29,20 @@ window {
 
 mainbox {
     background-color:               @bg-dark;
+    padding:                        0 2 5 2;
+    border:                         0% 0% 0% 0%;
+    border-color:                   @solid-focus;
     children:                       [ inputbar, listview ];
-	border-color:					@solid-focus;
 }
 
 listview {
+    background-color:               @bg-none;
     columns:                        6;
     lines:                          2;
-    spacing:                        1.5px;
+    spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
-    background-color:               @bg-none;
 }
 
 inputbar {
@@ -73,8 +75,8 @@ entry {
     expand:                         true;
     horizontal-align:               0.48;
     vertical-align:                 0.5;
-    placeholder:                    "Search Emoji";
-    padding:                        0px 0px 0px 0px;
+    placeholder:                    "Search...";
+    padding:                        6px 0px 6px 6px;
     blink:                          true;
 }
 
