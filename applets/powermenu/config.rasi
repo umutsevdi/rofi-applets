@@ -36,7 +36,7 @@ mainbox {
 listview {
     background-color:               @bg-none;
     columns:                        1;
-    lines:							4;
+    lines:							5;
     margin:                         8px;
     spacing:                        8px;
     cycle:                          true;

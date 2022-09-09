@@ -11,31 +11,35 @@ shutdown=""
 reboot="勒"
 lock=""
 sleep=⏾
+logout=""
 
-options="$shutdown\n$reboot\n$lock\n$sleep"
+options="$shutdown\n$reboot\n$lock\n$logout\n$sleep"
 
 chosen="`echo -e "$options" | $rofi_cmd -p "$uptime" -dmenu -selected-row 1`"
 
 echo $chosen
 case $chosen in
     $shutdown)
-                echo "shutting down"
+        echo "shutting down"
 		systemctl poweroff
     ;;
     $reboot)
-                echo "rebooting"
+        echo "rebooting"
 		systemctl reboot
     ;;
     $lock)
         echo "locking"
-         if ! command -v cinnamon-screensaver-command &> /dev/null ; then
+         if command -v cinnamon-screensaver-command &> /dev/null; then
+            cinnamon-screensaver-command --activate
+        elif command -v lockscreen &> /dev/null; then
             echo "cinnamon-screensaver doesn't exist, falling back to lockscreen" 1>&2
             lockscreen
-        elif ! command -v lockscreen &> /dev/null ; then
+        elif command -v i3lock &> /dev/null; then
             echo "lockscreen doesn't exist, falling back to i3lock" 1>&2
             i3lock
         else
-            cinnamon-screensaver-command --activate
+            echo "no lockscreen tool was found, exiting" 1>&2
+            exit
         fi
     ;;
     $sleep)
@@ -44,18 +48,22 @@ case $chosen in
 		playerctl pause
         (( `amixer get Master  | grep "\[on\]" | wc -l` > 0 )) && amixer set Master mute
 		systemctl suspend
-
-        if ! command -v cinnamon-screensaver-command &> /dev/null ; then
+         if command -v cinnamon-screensaver-command &> /dev/null; then
+            cinnamon-screensaver-command --activate
+        elif command -v lockscreen &> /dev/null; then
             echo "cinnamon-screensaver doesn't exist, falling back to lockscreen" 1>&2
             lockscreen
-        elif ! command -v lockscreen &> /dev/null ; then
+        elif command -v i3lock &> /dev/null; then
             echo "lockscreen doesn't exist, falling back to i3lock" 1>&2
             i3lock
         else
-            cinnamon-screensaver-command --activate
+            echo "no lockscreen tool was found, unlocking directly" 1>&2
         fi
-
         (( `ps -aux | grep 'dunst' | wc -l` == 0 )) && dunst -conf $HOME/.dotfiles/dunst/dunstrc
         (( `amixer get Master  | grep "\[off\]" | wc -l` > 0 )) && amixer set Master unmute
     ;;
+    $logout)
+        echo "logout"
+        i3-msg exit
+        ;;
 esac
