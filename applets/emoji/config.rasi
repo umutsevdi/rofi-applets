@@ -22,10 +22,9 @@ window {
     transparency:                   "real";
     border-radius:                  @round;
     location:                       south;
-	width:                          50%;
-    x-offset:                       0;
-    y-offset:                       0;
-}
+	width:                          1890px;
+    y-offset:                       -30;
+    }
 
 mainbox {
     background-color:               @bg-dark;
@@ -37,8 +36,8 @@ mainbox {
 
 listview {
     background-color:               @bg-none;
-    columns:                        6;
-    lines:                          2;
+    columns:                        10;
+    lines:                          3;
     spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
@@ -46,12 +45,11 @@ listview {
 }
 
 inputbar {
-    children:                       [ entry ];
+    children:                       [ textbox-prompt-colon , entry ];
     spacing:                        0px;
     background-color:               @bg-darkish;
     text-color:                     @fg;
     margin:                         0px 0px 0px 0px;
-    padding:                        0px;
     position:                       center;
     border:                         2;
     border-radius:                  @round;
@@ -76,8 +74,20 @@ entry {
     horizontal-align:               0.48;
     vertical-align:                 0.5;
     placeholder:                    "Search...";
-    padding:                        6px 0px 6px 6px;
+    padding:                        10px;
     blink:                          true;
+}
+
+textbox-prompt-colon {
+    font:                           @nerdfont;
+    expand:                         false;
+    str:                            "  ";
+	background-color: 				@solid-focus;
+	text-color: 					@fg;
+    font:                           "JetBrains Mono Nerd Font 11";
+    width:                          30px;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
 }
 
 prompt {

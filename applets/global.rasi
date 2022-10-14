@@ -32,4 +32,5 @@
   round:              8px;
   round-small:        5px;
   round-dropdown:     0 0 8px 8px;
+  icon-theme:         "Taru-Adw";
 }

@@ -7,9 +7,8 @@
 @import "../global.rasi"
 
 configuration {
-    font:                           "Roboto Regular 10";
     show-icons:                     true;
-    icon-theme:                     "Flat-Remix-Blue-Dark";
+    icon-theme:                     "Taru-Adw-dark";
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -25,24 +24,25 @@ window {
     transparency:                   "real";
     border-radius:                  @round;
     location:                       center;
-	width:							30%;
 }
 
 mainbox {
     background-color:               @bg-dark;
-    children:                       [ inputbar, listview ];
+    children:                       [ listview ];
     spacing:                        12px;
 }
 
 listview {
-    columns:						10;
-    lines:							1;
+    lines:                          1;
+    columns:                        10;
     spacing:                        12px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
     background-color:               @bg-none;
     margin:                         8px;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
 }
 
 inputbar {
@@ -65,25 +65,22 @@ element {
     text-color:                     @fg;
     orientation:                    vertical;
     border-radius:                  @round-small;
-    padding:                        0.5% 0.5% 0.5% 0.5%;
+    expand:                         false;
+    padding:                        20 0 20 0;
 }
 
 element-icon {
     background-color:               @bg-none;
     text-color:                     inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    size:                           48px;
+    size:                           64px;
     border:                         0px;
+    
 }
 
 element-text {
     background-color:               @bg-none;
-    text-color:                     inherit;
-    expand:                         true;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    margin:                         0.5% 0.5% -0.5% 0.5%;
+    text-color:                     @bg-none;
+    enabled: 						false;
 }
 
 element normal.urgent,
