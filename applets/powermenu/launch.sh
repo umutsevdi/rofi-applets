@@ -45,7 +45,7 @@ case $chosen in
         dunstctl set-paused true
         echo "locking"
         Lock
-        [ `dunstctl is-paused` = false ] && dunstctl set-paused false
+        [ `dunstctl is-paused` = true ] && dunstctl set-paused false
     ;;
     $sleep)
         echo "hibernate"
@@ -54,7 +54,7 @@ case $chosen in
         (( `amixer get Master  | grep "\[on\]" | wc -l` > 0 )) && amixer set Master mute
         systemctl suspend
         Lock
-        [ `dunstctl is-paused` = false ] && dunstctl set-paused false
+        [ `dunstctl is-paused` = true ] && dunstctl set-paused false
         (( `amixer get Master  | grep "\[off\]" | wc -l` > 0 )) && amixer set Master unmute
     ;;
     $logout)
