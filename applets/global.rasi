@@ -6,21 +6,21 @@
  */
 
 * {
-  solid-focus:        #89B4FAff;
-  solid-focus-dark:   #89B4FAff;
-  solid-bg:           #CDD6F4ff;
-  solid-bg-dark:      #1E1E2Eff;
-  solid-bg-selection: #585B70ff;
-  solid-fg:           #CDD6F4ff;
+  solid-focus:        #4285f4ff;
+  solid-focus-dark:   #4285f4ff;
+  solid-bg:           #333539ff;
+  solid-bg-dark:      #292b2eff;
+  solid-bg-selection: #292b2eff;
+  solid-fg:           #ffffffff;
   solid-fg-dark:      #f38ba8ff;
   solid-bg-warn:      #F38BA8ff;
 
-  focus:              #89B4FAe6;
-  focus-dark:         #89B4FAe6;
-  bg:                 #CDD6F4e6;
-  bg-dark:            #1E1E2Ee6;
-  bg-selection:       #585B70e6;
-  fg:                 #CDD6F4e6;
+  focus:              #4285f4e6;
+  focus-dark:         #4285f4e6;
+  bg:                 #333539e6;
+  bg-dark:            #292b2ee6;
+  bg-selection:       #292b2ee6;
+  fg:                 #ffffffe6;
   fg-dark:            #f38ba8e6;
   bg-none:            #00000000;
   bg-warn:            #F38BA8e6;
@@ -32,5 +32,5 @@
   round:              8px;
   round-small:        5px;
   round-dropdown:     0 0 8px 8px;
-  icon-theme:         "Taru-Adw";
+  icon-theme:         "Vector-dark";
 }

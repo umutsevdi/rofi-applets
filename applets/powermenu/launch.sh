@@ -13,6 +13,20 @@ lock=""
 sleep=⏾
 logout=""
 
+Lock() {
+    if command -v cinnamon-screensaver-command &> /dev/null; then
+        cinnamon-screensaver-command --activate
+    elif command -v lockscreen &> /dev/null; then
+        echo "cinnamon-screensaver doesn't exist, falling back to lockscreen" 1>&2
+        lockscreen
+    elif command -v i3lock &> /dev/null; then
+        echo "lockscreen doesn't exist, falling back to i3lock" 1>&2
+        i3lock
+    else
+        echo "no lockscreen tool was found, unlocking directly" 1>&2
+    fi
+}
+
 options="$shutdown\n$reboot\n$lock\n$logout\n$sleep"
 
 chosen="`echo -e "$options" | $rofi_cmd -p "$uptime" -dmenu -selected-row 1`"
@@ -21,45 +35,26 @@ echo $chosen
 case $chosen in
     $shutdown)
         echo "shutting down"
-		systemctl poweroff
+        systemctl poweroff
     ;;
     $reboot)
         echo "rebooting"
-		systemctl reboot
+        systemctl reboot
     ;;
     $lock)
+        dunstctl set-paused true
         echo "locking"
-         if command -v cinnamon-screensaver-command &> /dev/null; then
-            cinnamon-screensaver-command --activate
-        elif command -v lockscreen &> /dev/null; then
-            echo "cinnamon-screensaver doesn't exist, falling back to lockscreen" 1>&2
-            lockscreen
-        elif command -v i3lock &> /dev/null; then
-            echo "lockscreen doesn't exist, falling back to i3lock" 1>&2
-            i3lock
-        else
-            echo "no lockscreen tool was found, exiting" 1>&2
-            exit
-        fi
+        Lock
+        [ `dunstctl is-paused` = false ] && dunstctl set-paused false
     ;;
     $sleep)
         echo "hibernate"
-        killall dunst
-		playerctl pause
+        dunstctl set-paused true
+        playerctl pause
         (( `amixer get Master  | grep "\[on\]" | wc -l` > 0 )) && amixer set Master mute
-		systemctl suspend
-         if command -v cinnamon-screensaver-command &> /dev/null; then
-            cinnamon-screensaver-command --activate
-        elif command -v lockscreen &> /dev/null; then
-            echo "cinnamon-screensaver doesn't exist, falling back to lockscreen" 1>&2
-            lockscreen
-        elif command -v i3lock &> /dev/null; then
-            echo "lockscreen doesn't exist, falling back to i3lock" 1>&2
-            i3lock
-        else
-            echo "no lockscreen tool was found, unlocking directly" 1>&2
-        fi
-        (( `ps -aux | grep 'dunst' | wc -l` == 0 )) && dunst -conf $HOME/.dotfiles/dunst/dunstrc
+        systemctl suspend
+        Lock
+        [ `dunstctl is-paused` = false ] && dunstctl set-paused false
         (( `amixer get Master  | grep "\[off\]" | wc -l` > 0 )) && amixer set Master unmute
     ;;
     $logout)

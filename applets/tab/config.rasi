@@ -8,7 +8,7 @@
 
 configuration {
     show-icons:                     true;
-    icon-theme:                     "Taru-Adw-dark";
+    icon-theme:                     "Vector-dark";
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -51,12 +51,13 @@ inputbar {
 }
 
 prompt {
-    enabled: 						false;
+    enabled:                        false;
+
 }
 
 textbox-prompt-colon {
-	expand: 						false;
-    enabled: 						false;
+   expand:                          false;
+   enabled:                         false;
 }
 
 
@@ -67,12 +68,14 @@ element {
     border-radius:                  @round-small;
     expand:                         false;
     padding:                        20 0 20 0;
+    width:                          64px;
+    height:                         64px;
 }
 
 element-icon {
     background-color:               @bg-none;
     text-color:                     inherit;
-    size:                           64px;
+    size:                           48px;
     border:                         0px;
     
 }
@@ -80,7 +83,7 @@ element-icon {
 element-text {
     background-color:               @bg-none;
     text-color:                     @bg-none;
-    enabled: 						false;
+    enabled:                        false;
 }
 
 element normal.urgent,
@@ -97,9 +100,9 @@ element alternate.active {
 element selected {
     background-color:               @solid-focus;
     text-color:                     @solid-bg-dark;
-    border:                  		0px;
+    border:                         0px;
     border-radius:                  @round;
-    border-color:                  	@border;
+    border-color:                   @border;
 }
 
 element selected.urgent {
