@@ -7,9 +7,9 @@
 @import "../global.rasi"
 
 configuration {
-    font:                           "Roboto Regular 11";
+    font:                           "FiraSans 10";
     show-icons:                     true;
-    icon-theme:                     "Vector-dark";
+    icon-theme:                     "kora-green";
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -24,24 +24,25 @@ configuration {
 window {
     transparency:                   "real";
     border-radius:                  @round;
-    width:                          25%;
-    location:                       center;
+    width:                          30%;
+    location:                       north;
     x-offset:                       0;
     y-offset:                       0;
 }
 
 mainbox {
-    background-color:               @bg-dark;
+    background-color:               @bg;
     padding:                        0 2 5 2;
     border:                         0% 0% 0% 0%;
     border-color:                   @solid-focus;
+    border-radius:                  @round-dropdown;
     children:                       [ inputbar, listview ];
 }
 
 listview {
     background-color:               @bg-none;
-    columns:                        4;
-    lines:                          4;
+    columns:                        5;
+    lines:                          3;
     spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
@@ -51,47 +52,36 @@ listview {
 inputbar {
     children:                       [ textbox-prompt-colon , entry ];
     spacing:                        0px;
-    background-color:               @bg-darkish;
-    text-color:                     @fg;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
-    border:                         2;
-    border-radius:                  @round;
-    border-color:                   @solid-focus;
-}
-
-prompt {
-    enabled:                        true;
-    padding:                        10px;
-    background-color:               @bg-none;
-    text-color:                     @solid-focus;
+    background-color:               @solid-focus;
+    text-color:                     @solid-fg;
+    margin:                         0.0;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
+    border-radius:                  0;
 }
 
 textbox-prompt-colon {
     font:                           @nerdfont;
     expand:                         false;
     str:                            "  ";
-	background-color: 				@solid-focus;
-	text-color: 					@fg;
-    padding:                        6px 0px 6px 6px;
-    font:                           "JetBrains Mono Nerd Font 11";
+    background-color:               @bg-none;
+    text-color:                     @solid-fg-dark;
+    font:                           "JetBrains Mono Nerd Font 10";
     horizontal-align:               0.5;
     vertical-align:                 0.5;
+    border-radius:                  0;
 }
 
 entry {
-    font:                           "Roboto Regular 10";
+    font:                           "FiraSans 10";
     background-color:               @bg-none;
-    text-color:                     @solid-fg;
-    placeholder-color:              @solid-fg;
+    text-color:                     @solid-fg-dark;
+    placeholder-color:              @solid-fg-dark;
     expand:                         true;
     horizontal-align:               0.48;
     vertical-align:                 0.5;
     placeholder:                    "Search...";
-    padding:                        0px 0px 0px 0px;
+    padding:                        2px 0px 2px 0px;
     blink:                          true;
 }
 

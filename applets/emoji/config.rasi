@@ -7,10 +7,10 @@
 @import "../global.rasi"
 
 configuration {
-	font:							"Roboto Regular 11";
+    font:                            "FiraSans 10";
     drun-display-format:            "{name}";
     disable-history:                false;
-	sidebar-mode: 					false;
+    sidebar-mode:                     false;
 }
 
 * {
@@ -20,24 +20,24 @@ configuration {
 
 window {
     transparency:                   "real";
-    border-radius:                  @round;
+    border-radius:                  @round-small;
     location:                       south;
-	width:                          1890px;
+    width:                          40%;
     y-offset:                       -30;
     }
 
 mainbox {
-    background-color:               @bg-dark;
+    background-color:               @bg;
     padding:                        0 2 5 2;
     border:                         0% 0% 0% 0%;
     border-color:                   @solid-focus;
-    children:                       [ inputbar, listview ];
+    children:                       [  listview, inputbar ];
 }
 
 listview {
     background-color:               @bg-none;
-    columns:                        10;
-    lines:                          3;
+    columns:                        4;
+    lines:                          4;
     spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
@@ -47,18 +47,18 @@ listview {
 inputbar {
     children:                       [ textbox-prompt-colon , entry ];
     spacing:                        0px;
-    background-color:               @bg-darkish;
-    text-color:                     @fg;
-    margin:                         0px 0px 0px 0px;
+    background-color:               @solid-focus;
+    text-color:                     @solid-fg-dark;
+    margin:                         1px;
     position:                       center;
-    border:                         2;
-    border-radius:                  @round;
-    border-color:                   @solid-focus;
+    border:                         4;
+    border-radius:                  @round-small;
+    border-color:                   @solid-bg;
 }
 
 prompt {
     enabled:                        true;
-    padding:                        10px;
+    padding:                        5px;
     background-color:               @bg-none;
     text-color:                     @solid-focus;
     horizontal-align:               0.5;
@@ -66,15 +66,15 @@ prompt {
 }
 
 entry {
-    font:                           "Roboto Regular 10";
+    font:                           "FiraSans 10";
     background-color:               @bg-none;
-    text-color:                     @solid-fg;
-    placeholder-color:              @solid-fg;
+    text-color:                     @solid-fg-dark;
+    placeholder-color:              @solid-fg-dark;
     expand:                         true;
     horizontal-align:               0.48;
     vertical-align:                 0.5;
     placeholder:                    "Search...";
-    padding:                        10px;
+    padding:                        5px;
     blink:                          true;
 }
 
@@ -82,21 +82,21 @@ textbox-prompt-colon {
     font:                           @nerdfont;
     expand:                         false;
     str:                            "  ";
-	background-color: 				@solid-focus;
-	text-color: 					@fg;
+    background-color:               @solid-bg;
+    text-color:                     @solid-fg;
     font:                           "JetBrains Mono Nerd Font 11";
-    width:                          30px;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
+    border-radius:                  0;
 }
 
 prompt {
-    enabled: 						true;
+    enabled:                        true;
     padding:                        10px;
-	background-color: 				@bg-none;
-	text-color: 					@solid-focus;
+    background-color:               @bg-none;
+    text-color:                     @solid-focus;
     border-radius:                  0px;
-    border-color:                  	@solid-focus;
+    border-color:                   @solid-focus;
 }
 
 element {

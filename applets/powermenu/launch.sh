@@ -2,7 +2,7 @@
 # powermenu.sh - Rofi Powermenu
 # @author umutsevdi 
 
-[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/applets/
+[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/rofi-applets/
 dir="${ROFI_APPLETS_PATH}/applets/powermenu"
 rofi_cmd="rofi -theme $dir/config.rasi"
 uptime="`uptime -p | sed -e "s/up //g" | sed -e "s/hours/h/g" | sed -e  "s/hour/h/g" | sed -e "s/minutes/min/g"`"

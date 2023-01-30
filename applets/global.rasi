@@ -6,31 +6,31 @@
  */
 
 * {
-  solid-focus:        #4285f4ff;
-  solid-focus-dark:   #4285f4ff;
-  solid-bg:           #333539ff;
-  solid-bg-dark:      #292b2eff;
-  solid-bg-selection: #292b2eff;
-  solid-fg:           #ffffffff;
-  solid-fg-dark:      #f38ba8ff;
-  solid-bg-warn:      #F38BA8ff;
+  solid-focus:        #ffce51ff;
+  solid-focus-dark:   #ffce51ff;
+  solid-bg:           #333333ff;
+  solid-bg-dark:      #282828ff;
+  solid-bg-selection: #88807cff;
+  solid-fg:           #ebdbb2ff;
+  solid-fg-dark:      #282828ff;
+  solid-bg-warn:      #f15d22ff;
 
-  focus:              #4285f4e6;
-  focus-dark:         #4285f4e6;
-  bg:                 #333539e6;
-  bg-dark:            #292b2ee6;
-  bg-selection:       #292b2ee6;
-  fg:                 #ffffffe6;
-  fg-dark:            #f38ba8e6;
+  focus:              #ffce51e6;
+  focus-dark:         #ffce51e6;
+  bg:                 #333333e6;
+  bg-dark:            #282828e6;
+  bg-selection:       #88807ce6;
+  fg:                 #ebdbb2e6;
+  fg-dark:            #282828e6;
   bg-none:            #00000000;
-  bg-warn:            #F38BA8e6;
+  bg-warn:            #f15d22e6;
   bg-darkish:         #1E1E2E80;
   nerdfont:           "JetBrains Mono Nerd Font 10";
-  nerdfont-big:       "JetBrains Mono Nerd Font 20";
-  text:               "Roboto Regular 10";
+  nerdfont-big:       "JetBrains Mono Nerd Font 18";
+  text:               "FiraSans 10";
 
-  round:              8px;
-  round-small:        5px;
-  round-dropdown:     0 0 8px 8px;
-  icon-theme:         "Vector-dark";
+  round:              6px;
+  round-small:        4px;
+  round-dropdown:     0 0 4px 4px;
+  icon-theme:         "Pop-Extended";
 }

@@ -3,7 +3,7 @@
 # @author umutsevdi 
 # @requires playerctl
 
-[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/applets/
+[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/rofi-applets/
 if ! command -v playerctl &> /dev/null; then
     echo playerctl was not found 
 fi

@@ -7,8 +7,9 @@
 @import "../global.rasi"
 
 configuration {
+    font:                           "FiraSans 11";
     show-icons:                     true;
-    icon-theme:                     "Vector-dark";
+    icon-theme:                     "kora-green";
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;
@@ -18,18 +19,18 @@ configuration {
 * {
     background-color:               @bg;
     text-color:                     @solid-fg;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
 }
 
 window {
     transparency:                   "real";
     border-radius:                  @round;
-    location:                       center;
 }
 
 mainbox {
     background-color:               @bg-dark;
     children:                       [ listview ];
-    spacing:                        12px;
 }
 
 listview {
@@ -41,18 +42,17 @@ listview {
     layout:                         vertical;
     background-color:               @bg-none;
     margin:                         8px;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
+   expand:                          false;
 }
 
 inputbar {
     enabled: false;
-    position:                       center;
+   expand:                          false;
 }
 
 prompt {
     enabled:                        false;
-
+   expand:                          false;
 }
 
 textbox-prompt-colon {
@@ -62,53 +62,33 @@ textbox-prompt-colon {
 
 
 element {
-    background-color:               @bg-darkish;
+    background-color:               @bg;
     text-color:                     @fg;
-    orientation:                    vertical;
     border-radius:                  @round-small;
     expand:                         false;
-    padding:                        20 0 20 0;
-    width:                          64px;
-    height:                         64px;
+    padding:                        20;
+    background-color:               @solid-bg;
+    text-color:                     @solid-fg;
 }
 
 element-icon {
-    background-color:               @bg-none;
+    background-color:               inherit;
     text-color:                     inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
     size:                           48px;
     border:                         0px;
-    
 }
 
 element-text {
-    background-color:               @bg-none;
-    text-color:                     @bg-none;
-    enabled:                        false;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    text-color:                     @bg-selection;
-    border-radius:                  @round;
-}
-
-element normal.active,
-element alternate.active {
-    text-color:                     @bg-selection;
+    enabled:                        true;
+    text-color:                     inherit;
+    background-color:               inherit;
 }
 
 element selected {
     background-color:               @solid-focus;
-    text-color:                     @solid-bg-dark;
-    border:                         0px;
-    border-radius:                  @round;
-    border-color:                   @border;
-}
-
-element selected.urgent {
-    text-color:                     @bg-selection;
-}
-
-element selected.active {
-    color:                          @bg-selection;
+    text-color:                     @solid-fg-dark;
+    border:                         3px;
+    border-radius:                  @round-small;
 }

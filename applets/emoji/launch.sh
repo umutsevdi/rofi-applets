@@ -3,7 +3,7 @@
 # @author umutsevdi 
 # @requires xclip 
 
-[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/applets/
+[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/rofi-applets/
 if ! command -v xclip &> /dev/null; then
     echo xclip was not found 
 fi

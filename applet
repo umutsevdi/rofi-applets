@@ -1,10 +1,16 @@
 #! /bin/bash
-# applet_cli.sh - Command line interface to run Rofi Applets
-# @author umutsevdi 
-# @requires rofi
+#******************************************************************************
+#
+# * File: rofi-applets/applet
+#
+# * Author:  Umut Sevdi
+# * Created: 08/27/22
+# * Description: Command line interface to run Rofi Applets
+# * @require rofi
+#*****************************************************************************
 
 # Set to default path if applet path is not defined
-[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/applets/
+[ "$ROFI_APPLETS_PATH" = "" ] && ROFI_APPLETS_PATH=$HOME/.dotfiles/rofi-applets/
 options=`ls -d ${ROFI_APPLETS_PATH}/applets/*/ | sed "s#${ROFI_APPLETS_PATH}/applets##g" | tr "/" " "`
 [ "$options" = "" ] && echo -e "error: No applet were found at $ROFI_APPLETS_PATH directory.
 Either move applets to the $ROFI_APPLETS_PATH or define \$ROFI_APPLETS_PATH at .bashrc" 1>&2

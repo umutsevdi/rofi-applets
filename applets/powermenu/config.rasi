@@ -8,7 +8,7 @@
 
 configuration {
     show-icons:                     false;
-	font:                      		"Roboto Regular 12";
+    font:                           "FiraSans 10";
     disable-history:                false;
 	sidebar-mode: 					false;
 }
@@ -21,14 +21,14 @@ configuration {
 window {
     transparency:                   "real";
     border-radius:                  @round;
-    width:                          115px;
-    location:                       east;
+    width:                          100px;
+    location:                       northeast;
     x-offset:                       -15px;
-    y-offset:                       0px;
+    y-offset:                       20px;
 }
 
 mainbox {
-    background-color:               @bg-dark;
+    background-color:               @bg;
     children:                       [ inputbar, listview ];
     spacing:                        12px;
 }
@@ -47,40 +47,40 @@ listview {
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
     spacing:                        0px;
-    background-color:               @bg-darkish;
+    background-color:               @bg-dark;
     text-color:                     @fg;
-    border:                  		2px;
-    border-radius:                  @round;
-    border-color:                  	@solid-focus;
+    border:                  		4px;
+    border-radius:                  @round-small;
+    border-color:                  	@bg;
     margin:                         0px 0px 0px 0px;
     padding:                        0px;
     position:                       center;
 }
 
 prompt {
-    padding:                        10px;
+    padding:                        8px;
 	background-color: 				@bg-none;
 	text-color: 					@fg;
     border-radius:                  0px;
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     border-color:                  	@solid-focus;
-    font:                           "Roboto Italic 12px";
+    font:                           "FiraSans 13px";
 }
 
 textbox-prompt-colon {
 	expand: 						false;
 	str: 							"   ";
 	background-color: 				@solid-focus;
-	text-color: 					@fg;
+	text-color: 					@fg-dark;
     padding:                        6px 0px 6px 6px;
-    font:                           "JetBrains Mono Nerd Font 11";
+    font:                           "JetBrains Mono Nerd Font 10";
     horizontal-align:               0.5;
     vertical-align:                 0.5;
 }
 
 element {
-    background-color:               @bg-darkish;
+    background-color:               @bg-dark;
     text-color:                     @fg;
     orientation:                    vertical;
     border-radius:                  @round-small;
@@ -88,7 +88,7 @@ element {
 
 element-text {
     background-color: 				@bg-none;
-    text-color:       				inherit;
+    text-color:       				@fg;
 	font:							@nerdfont-big;
     expand:                         true;
     horizontal-align:               0.5;
@@ -102,21 +102,19 @@ element alternate.urgent {
     border-radius:                  @round-small;
 }
 
-element normal.active,
-element alternate.active {
-    background-color:               @bg-selection;
-    text-color:                     @fg;
-}
-
 element selected {
     background-color:               @solid-focus;
-    text-color:                     @solid-bg-dark;
+    text-color:                     @fg-dark;
     border:                  		0px;
     border-radius:                  @round-small;
     border-color:                  	@border;
 }
 
-element selected.active {
-    background-color:               @bg-selected;
-    color:                          @fg;
+element-text selected {
+    background-color: 				@bg-none;
+    text-color:       				@fg-dark;
+	font:							@nerdfont-big;
+    expand:                         true;
+    horizontal-align:               0.5;
+    margin:                         16px 12px 16px 12px;
 }
