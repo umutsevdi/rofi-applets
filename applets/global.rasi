@@ -32,5 +32,5 @@
   round:              6px;
   round-small:        4px;
   round-dropdown:     0 0 4px 4px;
-  icon-theme:         "Pop-Extended";
+  icon-theme:         "gruvbox-plus-icon-pack";
 }

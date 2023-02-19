@@ -9,7 +9,7 @@
 configuration {
     font:                           "FiraSans 10";
     show-icons:                     true;
-    icon-theme:                     "kora-green";
+    icon-theme:                     "gruvbox-plus-icon-pack";
     display-drun:                   "";
     drun-display-format:            "{name}";
     disable-history:                false;

@@ -23,7 +23,7 @@ window {
     border-radius:                  @round;
     width:                          100px;
     location:                       northeast;
-    x-offset:                       -15px;
+    x-offset:                       -5px;
     y-offset:                       20px;
 }
 
