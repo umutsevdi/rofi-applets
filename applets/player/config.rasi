@@ -8,7 +8,7 @@
 
 configuration {
     show-icons:                     false;
-    font:                           "FiraSans 10";
+    font:                           "IBMPlexSans 9.5";
     disable-history:                false;
     sidebar-mode:                   false;
 }
@@ -21,22 +21,25 @@ configuration {
 window {
     transparency:                   "real";
     border-radius:                  @round;
-    location:                       southeast;
-    width:                          400px;
-    x-offset:                       -20px;
-    y-offset:                       -20px;
+    location:                       north;
+    width:                          20%;
+    x-offset:                       0px;
+    y-offset:                       0px;
 }
 
 mainbox {
     background-color:               @bg;
     children:                       [ inputbar, listview ];
-    spacing:                        12px;
+    padding:                        -2 2 5 2;
+    border:                         0% 0% 0% 0%;
+    border-color:                   @solid-focus;
+    border-radius:                  @round-dropdown;
 }
 
 listview {
     columns:                        4;
     lines:                          1;
-    spacing:                        12px;
+    spacing:                        2px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -46,31 +49,35 @@ listview {
 inputbar {
     children:                       [ textbox-prompt-colon, prompt ];
     spacing:                        0px;
-    background-color:               @bg-dark;
-    text-color:                     @fg-dark;
-    border:                         2px;
-    border-radius:                  @round-small;
-    border-color:                   @solid-focus;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
+    background-color:               @solid-focus;
+    text-color:                     @solid-fg;
+    margin:                         0.0;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    border-radius:                  0;
 }
 
 prompt {
-    enabled:                        true;
-    padding:                        8px;
+    font:                           @text;
     background-color:               @bg-none;
-    text-color:                     @solid-focus;
-    border-radius:                  0px;
-    border-color:                      @solid-focus;
+    text-color:                     @solid-fg-dark;
+    placeholder-color:              @solid-fg-dark;
+    expand:                         false;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    padding:                        2px 0px 2px 0px;
+    blink:                          true;
 }
 
 textbox-prompt-colon {
+    font:                           @nerdfont;
     expand:                         false;
-    str:                             " ♫ ";
-    background-color:               @solid-focus;
-    text-color:                     @solid-bg;
-    padding:                        10px;
+    str:                             "    ♫   ";
+    background-color:               @bg-none;
+    text-color:                     @solid-fg-dark;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    border-radius:                  0;
 }
 
 
@@ -79,7 +86,8 @@ element {
     text-color:                     @fg;
     orientation:                    vertical;
     border-radius:                  @round-small;
-    margin:                         5px;
+    background-color:               @solid-bg-dark;
+    margin:                         2px;
 }
 
 element-text {
@@ -88,13 +96,13 @@ element-text {
     font:                           @nerdfont-big;
     expand:                         true;
     horizontal-align:               0.5;
-    margin:                         12px 16px 12px 16px;
+    margin:                         12px;
 }
 
 element selected {
     background-color:               @solid-focus;
     text-color:                     @solid-bg-dark;
     border:                         0px;
-    border-radius:                  @round;
+    border-radius:                  @round-small;
     border-color:                   @border;
 }

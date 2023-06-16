@@ -7,10 +7,10 @@
 @import "../global.rasi"
 
 configuration {
-    font:                            "FiraSans 10";
+    font:                            "IBMPlexSans 9.5";
     drun-display-format:            "{name}";
     disable-history:                false;
-    sidebar-mode:                     false;
+    sidebar-mode:                   false;
 }
 
 * {
@@ -21,9 +21,9 @@ configuration {
 window {
     transparency:                   "real";
     border-radius:                  @round-small;
-    location:                       south;
+    location:                       north;
     width:                          40%;
-    y-offset:                       -30;
+    y-offset:                       20;
     }
 
 mainbox {
@@ -66,7 +66,7 @@ prompt {
 }
 
 entry {
-    font:                           "FiraSans 10";
+    font:                           "IBMPlexSans 9.5";
     background-color:               @bg-none;
     text-color:                     @solid-fg-dark;
     placeholder-color:              @solid-fg-dark;
@@ -84,7 +84,7 @@ textbox-prompt-colon {
     str:                            "  ";
     background-color:               @solid-bg;
     text-color:                     @solid-fg;
-    font:                           "JetBrains Mono Nerd Font 11";
+    font:                           "Blex Mono Nerd Font 11";
     horizontal-align:               0.5;
     vertical-align:                 0.5;
     border-radius:                  0;

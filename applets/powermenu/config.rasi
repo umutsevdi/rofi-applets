@@ -7,114 +7,82 @@
 @import "../global.rasi"
 
 configuration {
-    show-icons:                     false;
-    font:                           "FiraSans 10";
     disable-history:                false;
-	sidebar-mode: 					false;
+    sidebar-mode:                   false;
 }
 
 * {
-    background-color:               @bg;
+    background-color:               @solid-bg;
     text-color:                     @solid-fg;
+    font:                           "IBMPlex Sans 9.5";
 }
-
 window {
     transparency:                   "real";
-    border-radius:                  @round;
-    width:                          100px;
-    location:                       northeast;
-    x-offset:                       -5px;
-    y-offset:                       20px;
+    anchor:     north;
+    location:   northeast;
+    children:   [ horibox ];
+    width: 50%;
 }
 
 mainbox {
     background-color:               @bg;
-    children:                       [ inputbar, listview ];
+    children:                       [ horibox];
     spacing:                        12px;
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ textbox-prompt-colon, prompt, listview ];
 }
 
 listview {
     background-color:               @bg-none;
-    columns:                        1;
-    lines:							5;
-    margin:                         8px;
-    spacing:                        8px;
     cycle:                          true;
-    dynamic:                        true;
-    layout:                         vertical;
-}
-
-inputbar {
-	children: 						[ textbox-prompt-colon, prompt ];
-    spacing:                        0px;
-    background-color:               @bg-dark;
-    text-color:                     @fg;
-    border:                  		4px;
-    border-radius:                  @round-small;
-    border-color:                  	@bg;
-    margin:                         0px 0px 0px 0px;
-    padding:                        0px;
-    position:                       center;
-}
-
-prompt {
-    padding:                        8px;
-	background-color: 				@bg-none;
-	text-color: 					@fg;
-    border-radius:                  0px;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
-    border-color:                  	@solid-focus;
-    font:                           "FiraSans 13px";
-}
-
-textbox-prompt-colon {
-	expand: 						false;
-	str: 							"   ";
-	background-color: 				@solid-focus;
-	text-color: 					@fg-dark;
-    padding:                        6px 0px 6px 6px;
-    font:                           "JetBrains Mono Nerd Font 10";
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
+    layout:                         horizontal;
+    spacing:    5px;
+    lines:      5;
 }
 
 element {
     background-color:               @bg-dark;
     text-color:                     @fg;
     orientation:                    vertical;
-    border-radius:                  @round-small;
+    border-radius:                  0;
 }
 
 element-text {
-    background-color: 				@bg-none;
-    text-color:       				@fg;
-	font:							@nerdfont-big;
-    expand:                         true;
-    horizontal-align:               0.5;
-    margin:                         16px 12px 16px 12px;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @bg-warn;
+    background-color:               @bg-none;
     text-color:                     @fg;
-    border-radius:                  @round-small;
+    font:                           @nerdfont;
+    expand:                         false;
+    horizontal-align:               0.5;
+    margin:                         0 10 0 10;
 }
 
 element selected {
     background-color:               @solid-focus;
     text-color:                     @fg-dark;
-    border:                  		0px;
-    border-radius:                  @round-small;
-    border-color:                  	@border;
+    border-radius:                  0;
 }
 
 element-text selected {
-    background-color: 				@bg-none;
-    text-color:       				@fg-dark;
-	font:							@nerdfont-big;
-    expand:                         true;
+    text-color:                     @fg-dark;
+    expand:                         false;
     horizontal-align:               0.5;
-    margin:                         16px 12px 16px 12px;
+    border-radius:                  0;
+}
+prompt {
+    background-color:               @bg-none;
+    text-color:                     @fg;
+    border-radius:                  0px;
+    font:                           "IBMPlexSans 12px";
+    margin:  0 11% 0 1%;
+}
+
+textbox-prompt-colon {
+    expand:                         false;
+    str:                            "   ";
+    background-color:               @solid-focus;
+    text-color:                     @fg-dark;
+    font:                           "Blex Mono Nerd Font 10";
 }

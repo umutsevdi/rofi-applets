@@ -6,31 +6,31 @@
  */
 
 * {
-  solid-focus:        #ffce51ff;
-  solid-focus-dark:   #ffce51ff;
-  solid-bg:           #333333ff;
-  solid-bg-dark:      #282828ff;
+  solid-focus:        #5fafd7ff;
+  solid-focus-dark:   #c4a000ff;
+  solid-bg:           #1c1c1cff;
+  solid-bg-dark:      #1c1c1cff;
   solid-bg-selection: #88807cff;
-  solid-fg:           #ebdbb2ff;
-  solid-fg-dark:      #282828ff;
-  solid-bg-warn:      #f15d22ff;
+  solid-fg:           #808080ff;
+  solid-fg-dark:      #333333ff;
+  solid-bg-warn:      #5faf5fff;
 
-  focus:              #ffce51e6;
-  focus-dark:         #ffce51e6;
-  bg:                 #333333e6;
-  bg-dark:            #282828e6;
+  focus:              #5fafd7e6;
+  focus-dark:         #c4a000e6;
+  bg:                 #1c1c1ce6;
+  bg-dark:            #1c1c1ce6;
   bg-selection:       #88807ce6;
-  fg:                 #ebdbb2e6;
-  fg-dark:            #282828e6;
-  bg-none:            #00000000;
-  bg-warn:            #f15d22e6;
+  fg:                 #808080e6;
+  fg-dark:            #333333e6;
+  bg-warn:            #5faf5fe6;
   bg-darkish:         #1E1E2E80;
-  nerdfont:           "JetBrains Mono Nerd Font 10";
-  nerdfont-big:       "JetBrains Mono Nerd Font 18";
-  text:               "FiraSans 10";
+  bg-none:            #00000000;
+  nerdfont:           "Blex Mono Nerd Font 10";
+  nerdfont-big:       "Blex Mono Nerd Font 16";
+  text:               "IBMPlexSans 10";
 
   round:              6px;
   round-small:        4px;
-  round-dropdown:     0 0 4px 4px;
-  icon-theme:         "gruvbox-plus-icon-pack";
+  round-dropdown:     0 0 2px 2px;
+  icon-theme:         "Tela-green-dark";
 }
