@@ -14,8 +14,13 @@ rofi_cmd="rofi -theme ${ROFI_APPLETS_PATH}/applets/player/config.rasi"
 stat=`playerctl status -s`
 artist=`playerctl metadata artist -s`
 title=`playerctl metadata title -s`
-title=${title:0:30}
-current="$artist - $title"
+
+if [ "$artist" = "" ]; then
+    current=$title
+else
+    [ "$title" = "" ] && current=$artist || \
+        current="$artist - $title"
+fi
 
 i_stop="栗"
 i_next="怜"
